@@ -32,9 +32,9 @@ runs:
       run: |
         source .env.passbolt
         if [[ "${{ inputs.environment }}" == "staging" ]]; then
-          npx tsx script/passbolt-env.ts staging
+          npx tsx scripts/passbolt-env.ts staging
         else
-          npx tsx script/passbolt-env.ts production
+          npx tsx scripts/passbolt-env.ts production
         fi
 
     - name: Cleanup Passbolt credentials
