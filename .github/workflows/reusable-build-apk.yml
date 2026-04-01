@@ -43,16 +43,16 @@ jobs:
           ${{ secrets.GRADLE_PROPERTIES }}
           EOF
 
+      - name: Install JS dependencies
+        shell: bash
+        run: yarn --cwd real-code install --silent
+
       - name: Setup environment file
         uses: ./.github/actions/setup-env
         with:
           environment: ${{ inputs.environment }}
           passbolt_env_file: ${{ secrets.PASSBOLT_ENV_FILE }}
           passbolt_private_key: ${{ secrets.PASSBOLT_PRIVATE_KEY }}
-
-      - name: Install JS dependencies
-        shell: bash
-        run: yarn --cwd real-code install --silent
 
       - name: Prepare mobile build
         uses: ./.github/actions/prepare-mobile-build
