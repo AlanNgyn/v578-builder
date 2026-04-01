@@ -36,13 +36,6 @@ jobs:
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > thelook.jks
 
-      - name: Setup gradle properties
-        working-directory: real-code/android
-        run: |
-          cat << 'EOF' > gradle.properties
-          ${{ secrets.GRADLE_PROPERTIES }}
-          EOF
-
       - name: Install JS dependencies
         shell: bash
         run: yarn --cwd real-code install --silent
