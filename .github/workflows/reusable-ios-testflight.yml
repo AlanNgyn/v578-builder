@@ -49,15 +49,15 @@ jobs:
         working-directory: real-code
         run: echo '${{ secrets.APP_STORE_CONNECT_API_KEY }}' > fastlane/api_key.json
 
-      - name: Cache Yarn dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            real-code/node_modules
-            ~/.cache/yarn
-          key: yarn-${{ hashFiles('real-code/yarn.lock') }}
-          restore-keys: |
-            yarn-
+      # - name: Cache Yarn dependencies
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       real-code/node_modules
+      #       ~/.cache/yarn
+      #     key: yarn-${{ hashFiles('real-code/yarn.lock') }}
+      #     restore-keys: |
+      #       yarn-
 
       - name: Install JS dependencies
         shell: bash
