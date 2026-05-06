@@ -14,7 +14,7 @@ on:
       xcode_version:
         description: "Xcode version (16.4 or 26.3)"
         required: true
-        default: "16.4"
+        default: "26.3"
 
 jobs:
   notify-start:
